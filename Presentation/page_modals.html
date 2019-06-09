@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Modal Tests</h1>
+	<div>
+		<button class="btn-primary js-modal" data-a11y-dialog-show="accessibleModal">Accessible Modal</button>
+	</div>
+</div>
+
+<!-- Accessible Modal - Start -->
+<div id="accessibleModal" class="modal" aria-hidden="true">
+
+    <div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+    <div class="modal__content" role="dialog" aria-labelledby="accessibleModalTitle">
+        <div role="document">
+
+            <button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#[icon-name]"></use>
+				</svg>
+			</button>
+
+			<h2 id="accessibleModalTitle">Modal</h2>
+
+			<p>This is a modal test</p>
+
+        </div>
+    </div>
+</div>
+<!-- Accessible Modal - End -->
