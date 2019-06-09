@@ -1,0 +1,365 @@
+<!--#include virtual="html_includes/globals/header/_header.html" -->
+
+
+<div class="container">
+    <h1>Modal Tests</h1>
+
+	<div>
+		<button class="btn-primary js-modal" data-a11y-dialog-show="subscribeModal">Subscribe</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="clearCartModal">Clear Cart</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="addProductShoppingList">Add Product to Shopping List</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="createShoppingList">Create New Shopping List</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="deleteShoppingList">Delete Shopping List</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="editListName">Edit List Name</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="skipDelivery">Skip Delivery</button>
+	</div>
+
+	<br/>
+
+	<div>
+		<button class="btn-secondary js-modal" data-a11y-dialog-show="changeDefaultLocation">Change Default Location</button>
+	</div>
+</div>
+
+<!-- Subscribe - Modal Start -->
+<div id="subscribeModal" class="modal" aria-hidden="true">
+
+    <div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+    <div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+        <div role="document">
+
+            <button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Subscribe Today!</h2>
+			
+			<div class="modal__input-wrap input-group">
+				<div class="input-group__input">
+					<label class="inner-label" for="subscribeEmail">Email</label>
+					<input type="text" id="subscribeEmail" />
+				</div>
+				<div class="input-group__btn">
+					<button class="btn-secondary">Sign Me Up</button>
+				</div>
+			</div>
+
+        </div>
+    </div>
+</div>
+<!-- Subscribe - Modal End -->
+
+<!-- Clear Cart - Modal Start -->
+<div id="clearCartModal" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Are you Sure?</h2>
+
+			<p>Clear all quantities to zero?</p>
+
+			<br/>
+			
+			<div class="modal__btn-group">
+				<button class="btn-black">Clear All <svg class="icon-arrow">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-arrow"></use>
+				</svg></button>
+				<button data-a11y-dialog-hide class="btn-link">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Clear Cart - Modal End -->
+
+<!-- Add Product Shopping List - Modal Start -->
+<div id="addProductShoppingList" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Add to Which List?</h2>
+
+			<div class="modal__group">
+				<div class="radio-fields radio-fields--modal">
+					<input id="radioCurrentList" class="radio-order" type="radio" name="radioShoppingList" value="CurrentShoppingList" checked="checked">
+					<label for="radioCurrentList">
+						<span id="shoppingListSelect" class="visually-hidden">Select a Shopping List</span>
+						<select aria-describedby="shoppingListSelect" name="shoppingListSelect" id="shoppingListSelect">
+							<option>Favorites</option>
+							<option>Favorites 2</option>
+							<option>Favorites 3</option>
+						</select>
+					</label>
+					<div class="radio-btn"></div>
+				</div>
+			</div>
+
+			<br/>
+			<hr>
+			<br/>
+			
+			<div class="modal__group">
+				<div class="radio-fields radio-fields--modal">
+					<input id="radioNewList" class="radio-order toggle-radio" type="radio" name="radioShoppingList" value="NewShoppingList">
+					<label for="radioNewList">Create a New List</label>
+					<div class="radio-btn"></div>
+				</div>
+			</div>
+
+			<br/>
+			
+			<div class="modal__group hidden-fields">
+				<h5>Name Your Shopping List:</h5>
+				<div class="input-form__input">
+					<label class="inner-label" for="name">Name*</label>
+					<input type="text" id="name">
+				</div>
+			</div>
+
+			<button class="btn-black">Add to shopping list</button>
+		</div>
+	</div>
+</div>
+<!-- Add Product Shopping List - Modal End -->
+
+<!-- Create New Shopping List - Modal Start -->
+<div id="createShoppingList" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Create a New List</h2>
+
+			<div class="modal__group">
+				<span class="modal__intro">Two ways to create a new shopping list:</span>
+				<div class="radio-fields radio-fields--modal">
+					<input id="radioBlankList" class="radio-order" type="radio" name="radioCreateShoppingList" value="BlankShoppingList" checked>
+					<label for="radioBlankList">Create a blank shopping list</label>
+					<div class="radio-btn"></div>
+				</div>
+				<div class="radio-fields radio-fields--modal">
+					<input id="radioRecentInvoices" class="radio-order" type="radio" name="radioCreateShoppingList" value="RecentInvoicesList">
+					<label for="radioRecentInvoices">Use items from your most recent invoices</label>
+					<div class="radio-btn"></div>
+				</div>
+			</div>
+
+			<br/>
+			<br/>
+
+			<div class="modal__group">
+				<h5>Name Your Shopping List:</h5>
+				<div class="input-form__input">
+					<label class="inner-label" for="name">Name*</label>
+					<input type="text" id="name" />
+				</div>
+				<div class="modal__btn-group">
+					<button class="btn-black">
+						Create Shopping List
+						<svg class="icon-arrow">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-arrow"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Create New Shopping List - Modal End -->
+
+<!-- Delete Shopping List - Modal Start -->
+<div id="deleteShoppingList" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Are you Sure?</h2>
+
+			<span class="modal__intro">Delete this shopping list from your profile?</span>
+
+			<br/>
+			
+			<div class="modal__btn-group">
+				<button class="btn-black">Yes, Delete <svg class="icon-arrow">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-arrow"></use>
+				</svg></button>
+				<button data-a11y-dialog-hide class="btn-link">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Delete Shopping List - Modal End -->
+
+<!-- Edit List Name - Modal Start -->
+<div id="editListName" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Edit List Name</h2>
+
+			<div class="input-form__input">
+				<label class="inner-label" for="name">Name</label>
+				<input type="text" id="name" />
+			</div>
+			
+			<div class="modal__btn-group">
+				<button class="btn-black">Save Name <svg class="icon-arrow">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-arrow"></use>
+				</svg></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Edit List Name - Modal End -->
+
+<!-- Skip Delivery - Modal Start -->
+<div id="skipDelivery" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+			<h2 id="subscribeModalTitle">Skip Delivery?</h2>
+
+			<p>Are you sure you want to skip the next delivery?</p>
+
+			<br/>
+
+			<p>The next delivery of this subscription will be scheduled for 4/27/2018</p>
+
+			<br/>
+			
+			<div class="modal__btn-group">
+				<button class="btn-black">Yes, Skip <svg class="icon-arrow">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-arrow"></use>
+				</svg></button>
+				<button data-a11y-dialog-hide class="btn-link">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Skip Delivery - Modal End -->
+
+<!-- Change Default Location - Modal Start -->
+<div id="changeDefaultLocation" class="modal" aria-hidden="true">
+
+	<div tabindex="-1" class="modal__overlay" data-a11y-dialog-hide></div>
+
+	<div class="modal__content" role="dialog" aria-labelledby="subscribeModalTitle">
+		<div role="document">
+
+			<button type="button" class="modal__close" data-a11y-dialog-hide aria-label="Close this dialog window">
+				<svg class="icon-close">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Static/assets/images/sprites/vector.spritesheet.svg#icon-delete"></use>
+				</svg>
+			</button>
+
+            <h2 id="subscribeModalTitle">Select Default Location</h2>
+            <p>Lorem ipsum dolor sit</p>
+
+            <br>
+
+			<div class="modal__group">
+				<div class="radio-fields radio-fields--modal">
+                    <label for="defaultLocation" class="visually-hidden">Select a Default Location</label>
+                    <select name="defaultLocation" id="defaultLocation">
+                        <option>Endurance - Account: #123456</option>
+                        <option>Location 2</option>
+                        <option>Location 3</option>
+                    </select>
+				</div>
+			</div>
+
+			<br/>
+
+			<button class="btn-black">Save Default</button>
+		</div>
+	</div>
+</div>
+<!-- Change Default Location - Modal End -->
+	
+<!--#include virtual="html_includes/globals/footer/_footer.html" -->
+
+<!--#include virtual="html_includes/globals/footer/_closing-body.html" -->

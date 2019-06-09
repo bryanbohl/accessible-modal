@@ -1,0 +1,114 @@
+.modal {
+	
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 0;
+	z-index: 999;
+	pointer-events: none;
+	transition: opacity 500ms ease-in-out;
+	transform: translate3d(0,0,0);
+
+	&--visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,0,0,0.5);
+
+		@at-root .modal--visible & {
+			opacity: 1;
+		}
+	}
+
+	&__content {
+		@include center();
+		filter: blur(0);
+		// zoom: 1.1;
+		padding: rem(25) rem(30);
+		background: $white;
+		min-width: calc(100% - #{rem(40)});
+		max-width: calc(100% - #{rem(120)});
+		z-index: 1001;
+		margin-top: rem(30);
+		transition: margin-top 500ms ease-in-out;
+
+		@at-root .modal--visible & {
+			margin-top: rem(0);
+		}
+
+		[class^="btn-"], .input-group {
+			min-width: 100%;
+			font-size: rem(12);
+		}
+
+		@include breakpoint($medium) {
+			padding: rem(50) rem(60);
+			min-width: 33.33%;
+		}
+		@include breakpoint($large) {
+			max-width: 1040px;
+		}
+	}
+
+	&__input-wrap {
+		[class^="btn-"] {
+			line-height: 1.5;
+		}
+	}
+
+	&__close {
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		@include reset-button();
+		padding: 5px;
+		background: transparent;
+		cursor: pointer;
+
+		svg {
+			fill: $gray;
+			width: 100%;
+			height: 100%;
+			transition: fill 300ms ease-in-out;
+		}
+		&:hover svg {
+			fill: $black;
+		}
+	}
+
+	&__intro {
+		display: block;
+		margin: 0 0 rem(10);
+		font-size: rem(12);
+	}
+
+	&__btn-group {
+
+		.btn-link {
+			padding: 0;
+		}
+
+		[class^="btn-"] {
+			margin-bottom: rem(12);
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.hidden-fields {
+		display: none;
+		&.show {
+			display: block;
+		}
+	}
+}
